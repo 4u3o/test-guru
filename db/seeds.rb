@@ -1,7 +1,48 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+5.times do
+  Category.create(
+    title: Faker::ProgrammingLanguage.unique.name,
+  )
+end
+
+categories_ids = Category.pluck(:id)
+
+10.times do
+  Test.create(
+    title: Faker::Lorem.unique.sentence,
+    level: Faker::Number.between(from: 0, to: 4),
+    category_id: categories_ids.sample
+  )
+end
+
+tests_ids = Test.pluck(:id)
+
+50.times do
+  Question.create(
+    body: Faker::Lorem.unique.question,
+    test_id: tests_ids.sample
+  )
+end
+
+questions = Question.all
+
+questions.each do |question|
+  4.times do
+    corrects = [true, false, false, false]
+
+    Answer.create(
+      body: Faker::Lorem.sentence(word_count: 1, random_words_to_add: 1),
+      question_id: question.id,
+      correct: corrects.delete(corrects.sample)
+    )
+  end
+end
+
+3.times do
+  User.create(
+    name: Faker::Name.name,
+    login: Faker::Color.unique.color_name
+  )
+end
+
+User.first.tests << Test.all.sample(5)
+
