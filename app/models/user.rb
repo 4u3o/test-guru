@@ -1,5 +1,8 @@
 class User < ApplicationRecord
-  has_and_belongs_to_many :tests
+  has_many :authored_tests, class_name: 'Test', foreign_key: :author_id
+
+  has_many :tests_users
+  has_many :tests, through: :tests_users
 
   def tests_by_level(level)
     self.tests.where(level: level)
