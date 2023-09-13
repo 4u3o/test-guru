@@ -5,12 +5,14 @@
 end
 
 categories_ids = Category.pluck(:id)
+author = User.create(login: 'author')
 
 10.times do
   Test.create(
     title: Faker::Lorem.unique.sentence,
     level: Faker::Number.between(from: 0, to: 4),
-    category_id: categories_ids.sample
+    category_id: categories_ids.sample,
+    author_id: author.id
   )
 end
 
@@ -44,5 +46,5 @@ end
   )
 end
 
-User.first.tests << Test.all.sample(5)
+User.all.second.tests << Test.all.sample(5)
 
