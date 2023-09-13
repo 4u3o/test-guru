@@ -1,20 +1,20 @@
-# 5.times do
-#   Category.create(
-#     title: Faker::ProgrammingLanguage.unique.name,
-#   )
-# end
-#
-# categories_ids = Category.pluck(:id)
-# author = User.create(login: 'author', email: 'autor@example.com')
-#
-# 10.times do
-#   Test.create(
-#     title: Faker::Lorem.unique.sentence,
-#     level: Faker::Number.between(from: 0, to: 4),
-#     category_id: categories_ids.sample,
-#     author_id: author.id
-#   )
-# end
+5.times do
+  Category.create(
+    title: Faker::ProgrammingLanguage.unique.name,
+  )
+end
+
+categories_ids = Category.pluck(:id)
+author = User.create(login: 'author', email: 'autor@example.com')
+
+10.times do
+  Test.create(
+    title: Faker::Lorem.unique.sentence,
+    level: Faker::Number.between(from: 0, to: 4),
+    category_id: categories_ids.sample,
+    author_id: author.id
+  )
+end
 
 tests_ids = Test.pluck(:id)
 
