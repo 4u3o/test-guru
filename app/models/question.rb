@@ -12,6 +12,6 @@ class Question < ApplicationRecord
 
   def validate_answers_count
     errors.add(:answers, "must be from #{MIN_ANSWERS} to #{MAX_ANSWERS}") unless
-      answers.count.between?(MIN_ANSWERS, MAX_ANSWERS)
+      answers.size.between?(MIN_ANSWERS, MAX_ANSWERS)
   end
 end
