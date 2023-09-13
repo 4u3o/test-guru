@@ -47,5 +47,4 @@ end
   )
 end
 
-User.all.second.tests << Test.all.sample(5)
-
+User.second.tests << Test.all.sample(5)
