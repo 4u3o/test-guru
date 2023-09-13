@@ -5,7 +5,7 @@
 end
 
 categories_ids = Category.pluck(:id)
-author = User.create(login: 'author')
+author = User.create(login: 'author', email: 'autor@example.com')
 
 10.times do
   Test.create(
@@ -42,7 +42,8 @@ end
 3.times do
   User.create(
     name: Faker::Name.name,
-    login: Faker::Color.unique.color_name
+    login: Faker::Color.unique.color_name,
+    email: Faker::Internet.unique.email
   )
 end
 
