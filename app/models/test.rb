@@ -14,10 +14,11 @@ class Test < ApplicationRecord
   scope :easy, -> { where(level: 0..1) }
   scope :middle, -> { where(level: 2..4) }
   scope :hard, -> { where(level: 5..) }
-  scope :titles_by_category, -> (title) do
-    joins(:category)
-      .where(category: {title: title})
-      .order(title: :desc)
-      .pluck(:title)
+  scope :by_category, -> (title) do
+    joins(:category).where(category: {title: title})
+  end
+
+  def self.titles_by_category(category)
+    by_category(category).order(title: :desc).pluck(:title)
   end
 end
