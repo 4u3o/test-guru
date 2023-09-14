@@ -1,4 +1,6 @@
 class Answer < ApplicationRecord
+  MAX_COUNT = 4
+
   belongs_to :question
 
   validates :body, presence: true
@@ -9,7 +11,7 @@ class Answer < ApplicationRecord
   private
 
   def validate_count
-    errors.add(:answers, "must be no more than #{Question::MAX_ANSWERS}") if
-      question.answers.count >= Question::MAX_ANSWERS
+    errors.add(:answers, "must be no more than #{MAX_COUNT}") if
+      question.answers.count >= MAX_COUNT
   end
 end
