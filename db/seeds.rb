@@ -5,7 +5,7 @@
 end
 
 categories_ids = Category.pluck(:id)
-author = User.create(login: 'author')
+author = User.create(login: 'author', email: 'autor@example.com')
 
 10.times do
   Test.create(
@@ -19,32 +19,28 @@ end
 tests_ids = Test.pluck(:id)
 
 50.times do
-  Question.create(
+  question = Question.new(
     body: Faker::Lorem.unique.question,
-    test_id: tests_ids.sample
+    test_id: tests_ids.sample,
   )
-end
 
-questions = Question.all
-
-questions.each do |question|
   4.times do
     corrects = [true, false, false, false]
-
-    Answer.create(
+    question.answers.new(
       body: Faker::Lorem.sentence(word_count: 1, random_words_to_add: 1),
-      question_id: question.id,
       correct: corrects.delete(corrects.sample)
     )
   end
+
+  question.save
 end
 
 3.times do
   User.create(
     name: Faker::Name.name,
-    login: Faker::Color.unique.color_name
+    login: Faker::Color.unique.color_name,
+    email: Faker::Internet.unique.email
   )
 end
 
-User.all.second.tests << Test.all.sample(5)
-
+User.second.tests << Test.all.sample(5)
