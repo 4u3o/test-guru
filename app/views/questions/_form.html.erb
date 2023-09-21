@@ -1,0 +1,18 @@
+<h1><%= question_header(@question) %></h1>
+<%= form_with model: [@test, @question] do |form| %>
+  <%= render 'partials/errors', resource: @question %>
+  <ul>
+    <li><%= form.label :body, 'Question' %><%= form.text_field :body %></li>
+    <%= form.fields_for :answers do |answer_field| %>
+      <li>
+        <%= answer_field.label :body, 'Answer' %>
+        <%= answer_field.text_field :body %>
+      </li>
+      <li>
+        <%= answer_field.label :correct %>
+        <%= answer_field.check_box :correct %>
+      </li>
+    <% end %>
+  </ul>
+  <%= form.submit %>
+<% end %>

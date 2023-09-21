@@ -3,25 +3,42 @@ class TestsController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_test_not_found
 
   def index
-    render plain: Test.all.inspect
+    @tests = Test.joins(:questions)
+                 .select('tests.*, COUNT(questions.id) as questions_count')
+                 .group('tests.id')
+  end
+
+  def show
   end
 
   def create
-    test = Test.new(test_params)
+    @test = Test.new(test_params)
 
-    if test.save
-      render root_path
+    if @test.save
+      redirect_to @test
     else
-      render plain: 'Test not created', status: :bad_request
+      render :new
     end
   end
 
   def new
-    render :new, layout: false
+    @test = Test.new
+  end
+
+  def edit
+  end
+
+  def update
+    if @test.update(test_params)
+      redirect_to @test
+    else
+      render :edit
+    end
   end
 
   def destroy
     @test.destroy
+    redirect_to root_path
   end
 
   private
