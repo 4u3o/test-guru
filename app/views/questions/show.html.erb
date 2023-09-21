@@ -5,5 +5,6 @@
 <ul>
   <%= render @question.answers %>
 </ul>
+<%= link_to "Test", test_path(@question.test) %> |
 <%= link_to "Edit", edit_question_path(@question) %> |
 <%= link_to "Home", root_path %>

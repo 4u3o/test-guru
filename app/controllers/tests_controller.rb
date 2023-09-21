@@ -3,9 +3,7 @@ class TestsController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_test_not_found
 
   def index
-    @tests = Test.joins(:questions)
-                 .select('tests.*, COUNT(questions.id) as questions_count')
-                 .group('tests.id')
+    @tests = Test.includes(:questions)
   end
 
   def show

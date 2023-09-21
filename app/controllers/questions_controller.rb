@@ -18,11 +18,9 @@ class QuestionsController < ApplicationController
 
   def new
     @question = @test.questions.new
-    @question.answers.build
   end
 
   def edit
-
   end
 
   def update
@@ -41,8 +39,7 @@ class QuestionsController < ApplicationController
   private
 
   def question_params
-    params.required(:question).permit(:body,
-                                      answers_attributes: [:id, :body, :correct])
+    params.required(:question).permit(:body)
   end
 
   def find_test
