@@ -21,4 +21,8 @@ class Test < ApplicationRecord
   def self.titles_by_category(category)
     by_category(category).order(title: :desc).pluck(:title)
   end
+
+  def questions_count
+    self.questions.size
+  end
 end

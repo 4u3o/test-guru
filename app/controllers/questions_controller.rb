@@ -3,32 +3,37 @@ class QuestionsController < ApplicationController
   before_action :find_question, except: %i(index create new)
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
 
-  def index
-    render plain: @test.questions.inspect
-  end
-
   def show
-    render plain: @question.inspect
   end
 
   def create
-    # Вопросы без ответов не создаются
-    question = @test.questions.new(question_params)
+    @question = @test.questions.new(question_params)
 
-    if question.save
-      redirect_to question_path(question)
+    if @question.save
+      redirect_to @question
     else
-      render plain: 'Question not created', status: :bad_request
+      render :new
     end
   end
 
   def new
-    # ActionView::Template::Error (Webpacker can't find application.js in .../test-guru/public/packs/manifest.json
-    render :new, layout: false
+    @question = @test.questions.new
+  end
+
+  def edit
+  end
+
+  def update
+    if @question.update(question_params)
+      redirect_to @question
+    else
+      render :edit
+    end
   end
 
   def destroy
     @question.destroy
+    redirect_to @question.test
   end
 
   private

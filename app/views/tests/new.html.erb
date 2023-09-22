@@ -1,17 +1,3 @@
 <h1>Create new test</h1>
-<form action="<%= tests_path %>" method="post">
-  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-  <p>
-    <label for="test-title">Title:</label>
-    <input type="text" name="test[title]" id="test-title">
-  </p>
-  <p>
-    <label for="test-level">Level:</label>
-    <input type="text" name="test[level]" id="test-level">
-  </p>
-  <p>
-    <label for="test-category">Category:</label>
-    <input type="text" name="test[category]" id="test-category">
-  </p>
-  <input type="submit" value="Create">
-</form>
+<%= render 'form' %>
+<%= link_to "Home", root_path %>
