@@ -6,7 +6,6 @@ class TestPassage < ApplicationRecord
   belongs_to :current_question, class_name: 'Question', optional: true
 
   before_validation :set_current_question
-  # before_save :next_question, unless: :new_record?
 
   def accept!(answer_ids)
     if correct_answer?(answer_ids)
@@ -25,7 +24,7 @@ class TestPassage < ApplicationRecord
   end
 
   def result
-    correct_questions.to_f / test.questions.size
+    correct_questions.to_f / test.questions_count
   end
 
   def current_question_number
@@ -41,10 +40,6 @@ class TestPassage < ApplicationRecord
           test.questions.where('id > ?', current_question_id).first
     end
 
-    # def set_first_question
-    #   self.current_question = test.questions.first if test.present?
-    # end
-
     def correct_answer?(answer_ids)
       return correct_answers.ids.empty? if answer_ids.nil?
 
@@ -54,8 +49,4 @@ class TestPassage < ApplicationRecord
     def correct_answers
       current_question.answers.correct
     end
-
-    # def next_question
-    #   self.current_question = test.questions.where('id > ?', current_question.id).first
-    # end
 end
