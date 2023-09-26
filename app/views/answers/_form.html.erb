@@ -1,0 +1,12 @@
+<%= form_with(model: [@question, @answer]) do |f| %>
+  <%= render 'partials/errors', resource: @answer %>
+
+  <ul>
+    <li><%= f.label :body %><%= f.text_area :body, id: :answer_body, rows: 7, cols: 60 %></li>
+    <li><%= f.label :correct %><%= f.check_box :correct, id: :answer_correct %></li>
+  </ul>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
