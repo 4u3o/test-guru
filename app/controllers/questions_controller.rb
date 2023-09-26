@@ -1,6 +1,6 @@
 class QuestionsController < ApplicationController
   before_action :set_test, only: %i[index create new]
-  before_action :find_question, except: %i[index create new]
+  before_action :set_question, except: %i[index create new]
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
 
   def show
@@ -42,11 +42,11 @@ class QuestionsController < ApplicationController
     params.required(:question).permit(:body)
   end
 
-  def find_test
+  def set_test
     @test = Test.find(params[:test_id])
   end
 
-  def find_question
+  def set_question
     @question = Question.find(params[:id])
   end
 

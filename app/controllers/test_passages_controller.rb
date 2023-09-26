@@ -8,8 +8,6 @@ class TestPassagesController < ApplicationController
   end
 
   def update
-    # изменить состояние (карент квестшн, правильные ответы)
-    # params[:answer_ids]
     @test_passage.accept!(params[:answer_ids])
 
     if @test_passage.completed?
