@@ -11,9 +11,10 @@
   </head>
 
   <body>
-    <%# render 'partial/nav' %>
+    <header>
+      <%= render 'partials/header' %>
+    </header>
     <%= yield %>
-    <%# render 'partial/footer' %>
     <footer>
       <%= render 'partials/footer' %>
     </footer>

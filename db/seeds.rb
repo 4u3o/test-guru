@@ -42,5 +42,3 @@ end
     email: Faker::Internet.unique.email
   )
 end
-
-User.second.tests << Test.all.sample(5)
