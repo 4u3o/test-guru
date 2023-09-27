@@ -28,16 +28,22 @@ class TestPassage < ApplicationRecord
   end
 
   def current_question_number
-    test.questions.ids.index(current_question_id).next
+    questions.ids.index(current_question_id).next
   end
 
   private
 
+    def questions
+      test.questions
+    end
+
+    def next_questions
+      questions.where('id > ?', current_question_id)
+    end
+
     def set_current_question
       self.current_question =
-        new_record? ?
-          test.questions.first :
-          test.questions.where('id > ?', current_question_id).first
+        new_record? ? questions.first : next_questions.first
     end
 
     def correct_answer?(answer_ids)
