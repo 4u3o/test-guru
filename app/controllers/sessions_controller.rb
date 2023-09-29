@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-  before_action :authenticate_user!, only: :destroy
+  skip_before_action :authenticate_user!, except: :destroy
 
   def new
   end
@@ -9,9 +9,10 @@ class SessionsController < ApplicationController
 
     if user&.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect_to session[:path]
+      redirect_to session[:redirect_path] || root_path
     else
-      flash.now[:alert] = 'Verify you email and password please'
+      flash[:alert] = 'Verify you email and password please'
+      debugger
       render :new
     end
   end
