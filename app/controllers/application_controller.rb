@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
 
     def authenticate_user!
       unless current_user
+        session[:path] = request.path
         redirect_to login_path, alert: 'Verify you email and password please'
       end
     end
