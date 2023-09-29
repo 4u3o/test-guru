@@ -1,10 +1,9 @@
 class User < ApplicationRecord
-  has_many :authored_tests, class_name: 'Test', foreign_key: :author_id
-
+  has_many :authored_tests, class_name: 'Test', inverse_of: 'author'
   has_many :test_passages
-  has_many :tests, through: :test_passages
+  has_many :tests, through: :test_passages, inverse_of: 'users'
 
-  validates :email, :login, presence: true
+  has_secure_password
 
   def tests_by_level(level)
     self.tests.where(level: level)

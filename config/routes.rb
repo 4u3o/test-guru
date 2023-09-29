@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'sessions/new'
   root 'tests#index'
 
   resources :tests do
@@ -16,4 +17,10 @@ Rails.application.routes.draw do
       get :result
     end
   end
+
+  get :signup, to: 'users#new'
+  resources :users, only: :create
+
+  get :login, to: 'sessions#new'
+  resources :sessions, only: :create
 end

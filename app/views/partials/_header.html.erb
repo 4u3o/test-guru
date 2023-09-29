@@ -1,1 +1,7 @@
-<%= link_to 'Home', root_path %>
+<% if logged_in? %>
+  <div class="nav user">
+    <p>
+      Welcome, <b><%= current_user.email %></b> Guru
+    </p>
+  </div>
+<% end %>
