@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+  before_action :authenticate_user!, only: :destroy
+
   def new
   end
 
@@ -12,5 +14,10 @@ class SessionsController < ApplicationController
       flash.now[:alert] = 'Verify you email and password please'
       render :new
     end
+  end
+
+  def destroy
+    session[:user_id] = nil
+    redirect_to root_path, notice: 'You are logged out'
   end
 end
