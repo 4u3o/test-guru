@@ -1,7 +1,17 @@
-<% if logged_in? %>
-  <div class="nav user">
-    <p>
-      Welcome, <b><%= current_user.email %></b> Guru
-    </p>
+<header>
+  <div>
+    <%= link_to 'TestGuru', root_path %>
   </div>
-<% end %>
+  <div class="nav user">
+    <% if logged_in? %>
+      <p>
+        Welcome, <b><%= current_user.email %></b> Guru
+      </p>
+      <%= link_to 'Log out', logout_path, method: :delete %>
+    <% else %>
+      <%= link_to 'Sign up', signup_path %> |
+      <%= link_to 'Log in', login_path %>
+    <% end %>
+  </div>
+</header>
+
