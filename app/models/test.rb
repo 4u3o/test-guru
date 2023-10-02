@@ -3,7 +3,7 @@ class Test < ApplicationRecord
   belongs_to :author, class_name: 'User'
   has_many :questions
   has_many :test_passages
-  has_many :users, through: :test_passages
+  has_many :users, through: :test_passages, inverse_of: 'tests'
 
   validates :title, uniqueness: { scope: :level }, presence: true
   validates :level, numericality: {

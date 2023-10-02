@@ -1,6 +1,5 @@
 class TestsController < ApplicationController
   before_action :set_test, except: %i(index create new)
-  before_action :set_user, only: :start
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_test_not_found
 
   def index
@@ -11,10 +10,10 @@ class TestsController < ApplicationController
   end
 
   def create
-    @test = Test.new(test_params)
+    @test = current_user.authored_tests.build(test_params)
 
     if @test.save
-      redirect_to @test
+      redirect_to @test, notice: 'Test was successfully created.'
     else
       render :new
     end
@@ -41,19 +40,15 @@ class TestsController < ApplicationController
   end
 
   def start
-    @user.tests.push(@test)
+    current_user.tests.push(@test)
 
-    redirect_to @user.test_passage(@test)
+    redirect_to current_user.test_passage(@test)
   end
 
   private
 
   def set_test
     @test = Test.find(params[:id])
-  end
-
-  def set_user
-    @user = User.first
   end
 
   def test_params
