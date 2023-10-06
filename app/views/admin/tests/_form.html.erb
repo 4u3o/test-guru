@@ -1,4 +1,4 @@
-<%= form_with model: @test do |form| %>
+<%= form_with model: [:admin, @test] do |form| %>
   <%= render 'partials/errors', resource: @test %>
   <ul>
     <li><%= form.label :title %><%= form.text_field :title %></li>
