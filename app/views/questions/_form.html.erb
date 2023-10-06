@@ -1,8 +1,0 @@
-<h1><%= question_header(@question) %></h1>
-<%= form_with model: [@test, @question] do |form| %>
-  <%= render 'partials/errors', resource: @question %>
-  <ul>
-    <li><%= form.label :body, 'Question' %><%= form.text_field :body %></li>
-  </ul>
-  <%= form.submit %>
-<% end %>

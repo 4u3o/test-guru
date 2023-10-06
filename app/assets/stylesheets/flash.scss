@@ -2,8 +2,13 @@
   border: 2px solid;
   padding: 10px;
   border-radius: 5px;
+  display: inline-block;
 }
 
 .flash.alert {
-  background-color: #ef2727;
+  border-color: #ef2727;
+}
+
+.flash.notice {
+  border-color: #3c85e0;
 }
