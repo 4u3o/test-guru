@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
-  get 'sessions/new'
   root 'tests#index'
+
+  devise_for :users, path: :gurus, path_names: {
+    sign_in: :login,
+    sign_out: :logout
+  }
+  get 'sessions/new'
 
   resources :tests do
     resources :questions, shallow: true, except: :index do
@@ -17,11 +22,4 @@ Rails.application.routes.draw do
       get :result
     end
   end
-
-  get :signup, to: 'users#new'
-  resources :users, only: :create
-
-  get :login, to: 'sessions#new'
-  delete :logout, to: 'sessions#destroy'
-  resources :sessions, only: :create
 end
