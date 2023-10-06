@@ -4,9 +4,9 @@
   <%= @question.body %>
 </p>
 <h2>Answers</h2>
-<%= link_to 'New Answer', new_question_answer_path(@question) %>
+<%= link_to 'New Answer', new_admin_question_answer_path(@question) %>
 <ol>
   <%= render @question.answers %>
 </ol>
-<%= link_to "Edit", edit_question_path(@question) %> |
+<%= link_to "Edit", edit_admin_question_path(@question) %> |
 <%= link_to "Back", admin_test_path(@question.test) %>

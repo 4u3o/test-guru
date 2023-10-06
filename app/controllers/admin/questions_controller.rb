@@ -1,4 +1,4 @@
-class QuestionsController < ApplicationController
+class Admin::QuestionsController < Admin::ApplicationController
   before_action :set_test, only: %i[index create new]
   before_action :set_question, except: %i[index create new]
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
@@ -10,7 +10,7 @@ class QuestionsController < ApplicationController
     @question = @test.questions.new(question_params)
 
     if @question.save
-      redirect_to @question, notice: 'Question was successfully created.'
+      redirect_to [:admin, @question], notice: 'Question was successfully created.'
     else
       render :new
     end
@@ -25,7 +25,7 @@ class QuestionsController < ApplicationController
 
   def update
     if @question.update(question_params)
-      redirect_to @question
+      redirect_to [:admin, @question]
     else
       render :edit
     end
@@ -33,7 +33,7 @@ class QuestionsController < ApplicationController
 
   def destroy
     @question.destroy
-    redirect_to @question.test
+    redirect_to [:admin, @question.test]
   end
 
   private

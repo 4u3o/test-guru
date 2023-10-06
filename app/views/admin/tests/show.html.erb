@@ -11,13 +11,13 @@
   <%= @test.category.title %>
 </p>
 <p>
-  <%= link_to "New Question", new_test_question_path(@test) %>
+  <%= link_to "New Question", new_admin_test_question_path(@test) %>
 </p>
 <table>
   <tr>
     <th>Question</th>
     <th colspan="3">Actions</th>
-    <%= render partial: 'questions/question', collection: @test.questions %>
+    <%= render partial: 'admin/questions/question', collection: @test.questions %>
   </tr>
 </table>
 
