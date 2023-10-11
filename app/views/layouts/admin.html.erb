@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Admin Panel | TestGuru</title>
+    <title><%= t('admin-panel') %> | <%= t('test-guru') %></title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -12,5 +12,6 @@
     <%= render 'partials/flash' %>
 
     <%= yield %>
+    <%= render 'partials/footer' %>
   </body>
 </html>

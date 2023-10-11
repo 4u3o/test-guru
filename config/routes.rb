@@ -6,7 +6,7 @@ Rails.application.routes.draw do
       registrations: 'users/registrations',
       sessions: 'users/sessions'
     },
-    path: :gurus,
+    path: 'gurus',
     path_names: {
       sign_in: :login,
       sign_out: :logout

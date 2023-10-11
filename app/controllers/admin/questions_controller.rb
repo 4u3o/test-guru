@@ -10,7 +10,7 @@ class Admin::QuestionsController < Admin::ApplicationController
     @question = @test.questions.new(question_params)
 
     if @question.save
-      redirect_to [:admin, @question], notice: 'Question was successfully created.'
+      redirect_to [:admin, @question], notice: t('.success')
     else
       render :new
     end
@@ -51,6 +51,6 @@ class Admin::QuestionsController < Admin::ApplicationController
   end
 
   def rescue_with_question_not_found
-    render plain: 'Question not found', status: :not_found
+    render plain: t('.not_found'), status: :not_found
   end
 end

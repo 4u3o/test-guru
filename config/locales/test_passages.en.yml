@@ -1,0 +1,7 @@
+en:
+  test_passages:
+    result:
+      header: "The %{title} Test was completed!"
+    show:
+      header: "Passing the %{title} Test"
+      next: "Next"

@@ -2,7 +2,7 @@
 <%= form_with model: [:admin, @test, @question] do |form| %>
   <%= render 'partials/errors', resource: @question %>
   <ul>
-    <li><%= form.label :body, 'Question' %><%= form.text_field :body %></li>
+    <li><%= form.label :body %><%= form.text_field :body %></li>
   </ul>
   <%= form.submit %>
 <% end %>

@@ -1,0 +1,34 @@
+en:
+  admin:
+    nav:
+      title: "TestGuru Admin Panel"
+      welcome_html: "Welcome, <b class='nav-admin user-email'>%{email}</b> Guru"
+    tests:
+      new:
+        header: "Create new test"
+      index:
+        header: "Tests"
+        new_test: "New test"
+      create:
+        success: "Test was successfully created."
+    questions:
+      show:
+        new-answer: "New Answer"
+      create:
+        success: "Question was successfully created."
+      not_found: "Question not found"
+      form:
+        header:
+          create: "Create question for %{test} test"
+          edit: "Edit question for %{test} test"
+      new:
+        header: "New Question"
+    answers:
+      edit:
+        header: "Editing Answer"
+      new:
+        header: "New Answer"
+      create:
+        success: "Answer was successfully created."
+    application:
+      not_authorized: "You are not authtorized to view this page."

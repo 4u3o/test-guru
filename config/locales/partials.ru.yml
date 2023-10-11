@@ -1,0 +1,12 @@
+ru:
+  partials:
+    header:
+      welcome: "Добро пожаловать,"
+    footer:
+      project: "Учебный проект в онлайн-школе Thinknetica"
+    errors:
+      header:
+        one: "%{count} ошибка обнаружена"
+        few: "%{count} ошибки обнаружено"
+        many: "%{count} ошибок обнаружено"
+        other: "%{count} ошибки обнаружено"

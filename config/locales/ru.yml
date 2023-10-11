@@ -1,0 +1,23 @@
+ru:
+  helpers:
+    submit:
+      create: "Создать %{model}"
+      update: "Обновить %{model}"
+      submit: "Сохранить %{model}"
+  test-guru: "Гуру Тестов"
+  admin-panel: "Панель Администратора"
+  logout: "Выйти"
+  sign_up: "Регистрация"
+  log_in: "Войти"
+  back: "Назад"
+  actions: "Действия"
+  show: "Показать"
+  edit: "Изменить"
+  delete: "Удалить"
+  confirmation: "Вы уверены?"
+  hero: "героический"
+  easy: "лёгкий"
+  elementary: "элементарный"
+  advanced: "продвинутый"
+  hard: "сложный"
+  footer: "платформа для тестов"
