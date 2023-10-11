@@ -19,6 +19,6 @@ class TestsController < ApplicationController
   end
 
   def rescue_with_test_not_found
-    render plain: 'Test not found', status: :not_found
+    render plain: t('.not_found'), status: :not_found
   end
 end

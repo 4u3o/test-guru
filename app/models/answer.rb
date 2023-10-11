@@ -11,7 +11,7 @@ class Answer < ApplicationRecord
   private
 
   def validate_count
-    errors.add(:answers, "must be no more than #{MAX_COUNT}") if
+    errors.add(:base, :too_many) if
       new_record? && question.answers.count >= MAX_COUNT
   end
 end

@@ -1,0 +1,8 @@
+en:
+  activerecord:
+    errors:
+      models:
+        answer:
+          attributes:
+            base:
+              too_many: "Answers must be no more then four"

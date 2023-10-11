@@ -1,0 +1,7 @@
+en:
+  tests:
+    not_found: "Test not found"
+    index:
+      header: "All Tests"
+    test:
+      start: "Start"

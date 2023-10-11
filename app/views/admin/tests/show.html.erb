@@ -1,25 +1,25 @@
 <p>
-  <strong>Title:</strong>
+  <strong><%= Test.human_attribute_name(:title) %>:</strong>
   <%= @test.title %>
 </p>
 <p>
-  <strong>Level:</strong>
-  <%= @test.level %>
+  <strong><%= Test.human_attribute_name(:level) %>:</strong>
+  <%= test_level(@test) %>
 </p>
 <p>
-  <strong>Category:</strong>
+  <strong><%= Test.human_attribute_name(:category_id) %>:</strong>
   <%= @test.category.title %>
 </p>
 <p>
-  <%= link_to "New Question", new_admin_test_question_path(@test) %>
+  <%= link_to t('admin.questions.new.header'), new_admin_test_question_path(@test) %>
 </p>
 <table>
   <tr>
-    <th>Question</th>
-    <th colspan="3">Actions</th>
+    <th><%= Question.model_name.human(count: @test.questions.count) %></th>
+    <th colspan="3"><%= t('actions') %></th>
     <%= render partial: 'admin/questions/question', collection: @test.questions %>
   </tr>
 </table>
 
-<%= link_to "Edit", edit_admin_test_path(@test) %> |
-<%= link_to "Back", admin_tests_path %>
+<%= link_to t('edit'), edit_admin_test_path(@test) %> |
+<%= link_to t('back'), admin_tests_path %>

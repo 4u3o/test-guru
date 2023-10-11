@@ -1,7 +1,7 @@
 module QuestionsHelper
   def question_header(question)
-    test_title_question = "#{question.test.title} question"
     question.new_record? ?
-      "Create #{test_title_question}" : "Edit #{test_title_question}"
+      t('admin.questions.form.header.create', test: question.test.title) :
+      t('admin.questions.form.header.edit', test: question.test.title)
   end
 end

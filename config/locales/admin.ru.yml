@@ -1,0 +1,34 @@
+ru:
+  admin:
+    nav:
+      title: "Административная панель Гуру Тестов"
+      welcome_html: "Добро пожаловать, Гуру <b class='nav-admin user-email'>%{email}</b>"
+    tests:
+      new:
+        header: "Создать новый тест"
+      index:
+        header: "Тесты"
+        new_test: "Новый тест"
+      create:
+        success: "Тест был успешно создан."
+    questions:
+      show:
+        new-answer: "Новый Ответ"
+      create:
+        success: "Вопрос был успешно создан."
+      not_found: "Вопрос не найден"
+      form:
+        header:
+          create: "Создать вопрос для теста %{test}"
+          edit: "Изменить вопрос для теста %{test}"
+      new:
+        header: "Новый вопрос"
+    answers:
+      edit:
+        header: "Изменить Ответ"
+      new:
+        header: "Новый Ответ"
+      create:
+        success: "Ответ был успешно создан."
+    application:
+      not_authorized: "Вы не можете просматривать эту страницу."

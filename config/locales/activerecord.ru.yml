@@ -1,0 +1,45 @@
+ru:
+  activerecord:
+    models:
+      user:
+        one: "Пользователь"
+        other: "Пользователи"
+      admin:
+        one: "Администратор"
+        other: "Администраторы"
+      test:
+        one: "Тест"
+        other: "Тесты"
+      answer:
+        one: "Ответ"
+        other: "Ответы"
+      question:
+        one: "Вопрос"
+        other: "Вопросы"
+      category:
+        one: "Категория"
+        other: "Категории"
+    attributes:
+      user:
+        email: "Email"
+        first_name: "Имя"
+        last_name: "Фамилия"
+      test:
+        title: "Название"
+        level: "Уровень"
+        author: "Автор"
+        category_id: "Категория"
+      answer:
+        body: "Содержание"
+        correct: "Верный"
+      question:
+        body: "Содержание"
+      test_passage:
+        current_question_id: "Текущий вопрос"
+        correct_questions: "Правильных ответов"
+    errors:
+      models:
+        answer:
+          attributes:
+            base:
+              too_many: "Ответов должно быть не больше четырех"

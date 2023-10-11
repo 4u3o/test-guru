@@ -13,7 +13,7 @@ class Admin::TestsController < Admin::ApplicationController
     @test = current_user.authored_tests.build(test_params)
 
     if @test.save
-      redirect_to [:admin, @test], notice: 'Test was successfully created.'
+      redirect_to [:admin, @test], notice: t('.success')
     else
       render :new
     end
@@ -50,6 +50,6 @@ class Admin::TestsController < Admin::ApplicationController
   end
 
   def rescue_with_test_not_found
-    render plain: 'Test not found', status: :not_found
+    render plain: t('tests.not_found'), status: :not_found
   end
 end

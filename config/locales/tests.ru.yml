@@ -1,0 +1,7 @@
+ru:
+  tests:
+    not_found: "Тест не найден"
+    index:
+      header: "Все тесты"
+    test:
+      start: "Начать"

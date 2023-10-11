@@ -1,0 +1,10 @@
+en:
+  partials:
+    header:
+      welcome: "Welcome,"
+    footer:
+      project: "Study project for Thinknetica"
+    errors:
+      header:
+        one: "%{count} error detected"
+        other: "%{count} errors detected"
