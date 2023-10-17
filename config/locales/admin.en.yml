@@ -2,7 +2,6 @@ en:
   admin:
     nav:
       title: "TestGuru Admin Panel"
-      welcome_html: "Welcome, <b class='nav-admin user-email'>%{email}</b> Guru"
     tests:
       new:
         header: "Create new test"
