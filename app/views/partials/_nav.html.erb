@@ -3,7 +3,7 @@
     <div class="container-fluid">
       <%= link_to t('test-guru'), root_path, class: 'navbar-brand' %>
       <% if current_user&.admin? %>
-        <%= render 'admin/tests/panel_link' %>
+        <%= render 'admin/application/panel_link' %>
       <% end %>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>

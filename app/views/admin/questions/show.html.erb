@@ -1,12 +1,22 @@
-<h1><%= @question.test.title %> <%= Question.model_name.human %></h1>
-<p>
-  <strong><%= Question.human_attribute_name(:body) %>:</strong>
-  <%= @question.body %>
-</p>
-<h2><%= Answer.model_name.human(count: @question.answers.count) %></h2>
-<%= link_to t('.new-answer'), new_admin_question_answer_path(@question) %>
-<ol>
-  <%= render @question.answers %>
-</ol>
-<%= link_to t('edit'), edit_admin_question_path(@question) %> |
-<%= link_to t('back'), admin_test_path(@question.test) %>
+<div class="card my-3">
+  <div class="card-header">
+    <h5><%= Test.model_name.human %>: <%= @question.test.title %> </h5>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">
+      <strong><%= Question.human_attribute_name(:body) %>:</strong>
+      <%= @question.body %>
+      <%= link_to t('edit'), edit_admin_question_path(@question) %>
+    </li>
+    <li class="list-group-item">
+      <h6><%= Answer.model_name.human(count: @question.answers.count) %></h6>
+      <ol>
+        <%= render @question.answers %>
+      </ol>
+      <%= link_to t('.new-answer'), new_admin_question_answer_path(@question), class: 'btn btn-primary' %>
+    </li>
+    <li class="list-group-item">
+      <%= link_to t('back'), admin_test_path(@question.test) %>
+    </li>
+  </ul>
+</div>
