@@ -11,9 +11,15 @@
   </head>
   <body>
     <%= render 'admin/nav' %>
-    <%= render 'partials/flash' %>
 
-    <%= yield %>
+    <main>
+      <div class="container">
+        <%= render 'partials/flash' %>
+
+        <%= yield %>
+      </div>
+    </main>
+
     <%= render 'partials/footer' %>
   </body>
 </html>
