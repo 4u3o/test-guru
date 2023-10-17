@@ -1,7 +1,7 @@
 en:
   admin:
     nav:
-      title: "TestGuru Admin Panel"
+      title: "Admin Panel"
     tests:
       new:
         header: "Create new test"
