@@ -1,3 +1,6 @@
 <% flash.each do |key, message| %>
-  <%= content_tag :p, message, class: "flash #{key}" %>
+  <% style = key == 'notice' ? 'success' : 'danger' %>
+  <div class="alert alert-<%= style %>" role="alert">
+    <%= message %>
+  </div>
 <% end %>

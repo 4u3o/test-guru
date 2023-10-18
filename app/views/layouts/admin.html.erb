@@ -2,6 +2,8 @@
 <html lang="en">
   <head>
     <title><%= t('admin-panel') %> | <%= t('test-guru') %></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,9 +11,15 @@
   </head>
   <body>
     <%= render 'admin/nav' %>
-    <%= render 'partials/flash' %>
 
-    <%= yield %>
+    <main>
+      <div class="container">
+        <%= render 'partials/flash' %>
+
+        <%= yield %>
+      </div>
+    </main>
+
     <%= render 'partials/footer' %>
   </body>
 </html>

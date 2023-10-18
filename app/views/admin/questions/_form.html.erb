@@ -1,8 +1,10 @@
-<h1><%= question_header(@question) %></h1>
 <%= form_with model: [:admin, @test, @question] do |form| %>
   <%= render 'partials/errors', resource: @question %>
-  <ul>
-    <li><%= form.label :body %><%= form.text_field :body %></li>
-  </ul>
-  <%= form.submit %>
+  <div class="form-group">
+    <p>
+      <%= form.label :body %>
+      <%= form.text_field :body, class: 'form-control' %>
+    </p>
+    <%= form.submit class: 'btn btn-primary' %>
+  </div>
 <% end %>

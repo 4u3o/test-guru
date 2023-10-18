@@ -28,6 +28,7 @@ ru:
         title: "Название"
         level: "Уровень"
         author: "Автор"
+        questions: "Вопросы"
         category_id: "Категория"
       answer:
         body: "Содержание"

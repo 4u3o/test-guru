@@ -1,14 +1,21 @@
-<h1><%= Question.model_name.human %>:</h1>
-<p><%= @answer.question.body %></p>
-
-<p>
-  <b><%= Answer.human_attribute_name(:body) %>:</b>
-  <%= @answer.body %>
-</p>
-
-<p>
-  <b><%= Answer.human_attribute_name(:correct) %>:</b>
-  <%= @answer.correct %>
-</p>
-
-<%= link_to t('back'), admin_question_path(@answer.question) %>
+<div class="card my-3">
+  <div class="card-header">
+    <h5><%= Question.model_name.human %>: </h5>
+    <%= @answer.question.body %>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">
+      <b><%= Answer.human_attribute_name(:body) %>:</b>
+      <%= @answer.body %>
+      <%= link_to t('edit'), edit_admin_answer_path(@answer) %>
+    </li>
+    <li class="list-group-item">
+      <b><%= Answer.human_attribute_name(:correct) %>:</b>
+      <%= @answer.correct %>
+      <%= link_to t('edit'), edit_admin_answer_path(@answer) %>
+    </li>
+    <li class="list-group-item">
+      <%= link_to t('back'), admin_test_path(@answer.question) %>
+    </li>
+  </ul>
+</div>

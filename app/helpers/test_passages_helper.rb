@@ -3,8 +3,8 @@ module TestPassagesHelper
     result_in_percentage = number_to_percentage(test_passage.result * 100, precision: 0)
 
     klass, message = test_passage.success? ?
-                       ['result-success', 'Тест успешно пройден'] :
-                       ['result-fail', 'Тест не пройден']
+                       ['text-success', 'Тест успешно пройден'] :
+                       ['text-danger', 'Тест не пройден']
 
     "<span class=#{klass}>#{result_in_percentage}</span> #{message}".html_safe
   end

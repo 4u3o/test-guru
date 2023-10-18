@@ -1,8 +1,7 @@
 ru:
   admin:
     nav:
-      title: "Административная панель Гуру Тестов"
-      welcome_html: "Добро пожаловать, Гуру <b class='nav-admin user-email'>%{email}</b>"
+      title: "Административная панель"
     tests:
       new:
         header: "Создать новый тест"

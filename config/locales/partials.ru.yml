@@ -1,7 +1,5 @@
 ru:
   partials:
-    header:
-      welcome: "Добро пожаловать,"
     footer:
       project: "Учебный проект в онлайн-школе Thinknetica"
     errors:
@@ -10,3 +8,5 @@ ru:
         few: "%{count} ошибки обнаружено"
         many: "%{count} ошибок обнаружено"
         other: "%{count} ошибки обнаружено"
+    nav:
+      welcome_html: "Добро пожаловать, Гуру <b class='nav-admin user-email'>%{email}</b>"

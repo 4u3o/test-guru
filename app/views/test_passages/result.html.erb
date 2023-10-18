@@ -1,4 +1,8 @@
-<h1><%= t('.header', title: @test_passage.test.title) %></h1>
-<p>
-  <%= colorize_result(@test_passage) %>
-</p>
+<div class="card my-3">
+  <div class="card-body">
+    <h1><%= t('.header', title: @test_passage.test.title) %></h1>
+    <p>
+      <%= colorize_result(@test_passage) %>
+    </p>
+  </div>
+</div>

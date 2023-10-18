@@ -1,9 +1,11 @@
-<footer>
-  <%= current_year %> |
-  <%= link_to 'Author', '/about/author' %> |
-  <%= github_url('4u3o', 'test-guru') %> - <%= t('footer') %> |
-  <%= link_to t('.project'),
-              'http://thinknetica.com/',
-              target: "_blank",
-              rel: "noopener noreferrer" %>
+<footer class="footer py-3 bg-light">
+  <div class="container">
+    <%= current_year %> |
+    <%= link_to 'Author', '/about/author' %> |
+    <%= github_url('4u3o', 'test-guru') %> - <%= t('footer') %> |
+    <%= link_to t('.project'),
+                'http://thinknetica.com/',
+                target: "_blank",
+                rel: "noopener noreferrer" %>
+  </div>
 </footer>

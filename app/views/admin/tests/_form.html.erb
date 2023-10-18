@@ -1,12 +1,18 @@
 <%= form_with model: [:admin, @test] do |form| %>
   <%= render 'partials/errors', resource: @test %>
-  <ul>
-    <li><%= form.label :title %><%= form.text_field :title %></li>
-    <li><%= form.label :level %><%= form.number_field :level %></li>
-    <li>
+  <div class="form-group">
+    <p>
+      <%= form.label :title %>
+      <%= form.text_field :title, class: 'form-control' %>
+    </p>
+    <p>
+      <%= form.label :level %>
+      <%= form.number_field :level %>
+    </p>
+    <p>
       <%= form.label :category_id %>
       <%= form.collection_select :category_id, Category.all, :id, :title, prompt: true %>
-    </li>
-  </ul>
-  <%= form.submit %>
+    </p>
+    <%= form.submit class: 'btn btn-primary' %>
+  </div>
 <% end %>
