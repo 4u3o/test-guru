@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module TestsHelper
   TEST_LEVELS = {
     0 => I18n.t('.easy'),

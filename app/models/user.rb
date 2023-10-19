@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class User < ApplicationRecord
   devise :database_authenticatable,
          :registerable,
@@ -15,7 +17,7 @@ class User < ApplicationRecord
   validates :email, uniqueness: true, format: { with: URI::MailTo::EMAIL_REGEXP }
 
   def tests_by_level(level)
-    self.tests.where(level: level)
+    tests.where(level:)
   end
 
   def test_passage(test)
@@ -23,6 +25,6 @@ class User < ApplicationRecord
   end
 
   def admin?
-    self.is_a? Admin
+    is_a? Admin
   end
 end

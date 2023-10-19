@@ -1,13 +1,20 @@
+# frozen_string_literal: true
+
 class Admin::TestsController < Admin::ApplicationController
-  before_action :set_test, except: %i(index create new)
+  before_action :set_test, except: %i[index create new]
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_test_not_found
 
   def index
     @tests = Test.includes(:questions)
   end
 
-  def show
+  def show; end
+
+  def new
+    @test = Test.new
   end
+
+  def edit; end
 
   def create
     @test = current_user.authored_tests.build(test_params)
@@ -17,13 +24,6 @@ class Admin::TestsController < Admin::ApplicationController
     else
       render :new
     end
-  end
-
-  def new
-    @test = Test.new
-  end
-
-  def edit
   end
 
   def update

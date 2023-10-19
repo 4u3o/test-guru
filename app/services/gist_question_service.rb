@@ -1,26 +1,29 @@
+# frozen_string_literal: true
+
 class GistQuestionService
   def initialize(question, client: nil)
     @question = question
     @test = @question.test
-    @client = client || Octokit::Client.new(access_token: ENV['GITHUB_TOKEN'])
+    @client = client || Octokit::Client.new(access_token: ENV.fetch('GITHUB_TOKEN', nil))
   end
 
   def call
-    # боюсь что кто-то может вклиниться с вызовом между call и success?
     result = client.create_gist(gist_params)
     success? ? result : nil
   end
 
-  def success?
-    client.last_response.status == CREATED
-  end
-
   private
 
-  FILE_NAME = 'test-guru-question.txt'
   CREATED = 201
+  FILE_NAME = 'test-guru-question.txt'
 
   attr_reader :test, :client, :question
+
+  def gist_content
+    content = [question.body]
+    content += question.answers.pluck(:body)
+    content.join("\n")
+  end
 
   def gist_params
     {
@@ -33,9 +36,7 @@ class GistQuestionService
     }
   end
 
-  def gist_content
-    content = [question.body]
-    content += question.answers.pluck(:body)
-    content.join("\n")
+  def success?
+    client.last_response.status == CREATED
   end
 end
