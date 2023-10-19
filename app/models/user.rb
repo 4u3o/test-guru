@@ -10,6 +10,7 @@ class User < ApplicationRecord
   has_many :authored_tests, class_name: 'Test', foreign_key: :author_id, inverse_of: 'author'
   has_many :test_passages
   has_many :tests, through: :test_passages, inverse_of: 'users'
+  has_many :gists, inverse_of: 'user'
 
   validates :email, uniqueness: true, format: { with: URI::MailTo::EMAIL_REGEXP }
 
