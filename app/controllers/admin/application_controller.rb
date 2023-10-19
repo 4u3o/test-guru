@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Admin::ApplicationController < ApplicationController
   layout 'admin'
 
@@ -5,7 +7,7 @@ class Admin::ApplicationController < ApplicationController
 
   private
 
-    def admin_required!
-      redirect_to root_path, alert: t('.not_authorized') unless current_user.admin?
-    end
+  def admin_required!
+    redirect_to root_path, alert: t('.not_authorized') unless current_user.admin?
+  end
 end

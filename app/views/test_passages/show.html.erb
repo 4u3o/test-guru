@@ -19,5 +19,6 @@
       <% end %>
       <%= f.submit t('.next'), class: 'btn btn-primary' %>
     <% end %>
+    <%= link_to t('.gist'), test_passage_gist_path(@test_passage), method: :post %>
   </div>
 </div>

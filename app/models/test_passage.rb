@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class TestPassage < ApplicationRecord
   SUCCESS_RATE = 0.85
 
@@ -33,26 +35,26 @@ class TestPassage < ApplicationRecord
 
   private
 
-    def questions
-      test.questions
-    end
+  def questions
+    test.questions
+  end
 
-    def next_questions
-      questions.where('id > ?', current_question_id)
-    end
+  def next_questions
+    questions.where('id > ?', current_question_id)
+  end
 
-    def set_current_question
-      self.current_question =
-        new_record? ? questions.first : next_questions.first
-    end
+  def set_current_question
+    self.current_question =
+      new_record? ? questions.first : next_questions.first
+  end
 
-    def correct_answer?(answer_ids)
-      return correct_answers.ids.empty? if answer_ids.nil?
+  def correct_answer?(answer_ids)
+    return correct_answers.ids.empty? if answer_ids.nil?
 
-      correct_answers.ids.sort == answer_ids.map(&:to_i).sort
-    end
+    correct_answers.ids.sort == answer_ids.map(&:to_i).sort
+  end
 
-    def correct_answers
-      current_question.answers.correct
-    end
+  def correct_answers
+    current_question.answers.correct
+  end
 end

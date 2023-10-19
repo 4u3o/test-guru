@@ -1,6 +1,6 @@
 <% flash.each do |key, message| %>
   <% style = key == 'notice' ? 'success' : 'danger' %>
   <div class="alert alert-<%= style %>" role="alert">
-    <%= message %>
+    <%= message.html_safe %>
   </div>
 <% end %>

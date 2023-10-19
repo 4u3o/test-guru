@@ -5,3 +5,4 @@ ru:
     show:
       header: "Прохождение %{title} теста"
       next: "Следующий"
+      gist: "Создать Gist c вопросом"

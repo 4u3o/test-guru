@@ -21,3 +21,4 @@ ru:
   advanced: "продвинутый"
   hard: "сложный"
   footer: "платформа для тестов"
+  description: "Вопрос о %{test_title} из ГуруТестов"

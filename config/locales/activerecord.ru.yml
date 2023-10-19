@@ -19,6 +19,9 @@ ru:
       category:
         one: "Категория"
         other: "Категории"
+      gist:
+        one: "Gist"
+        other: "Gists"
     attributes:
       user:
         email: "Email"
@@ -38,6 +41,10 @@ ru:
       test_passage:
         current_question_id: "Текущий вопрос"
         correct_questions: "Правильных ответов"
+      gist:
+        question_id: "Вопрос"
+        url_hash: "Hash"
+        user_id: "Пользователь"
     errors:
       models:
         answer:

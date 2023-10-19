@@ -5,3 +5,4 @@ en:
     show:
       header: "Passing the %{title} Test"
       next: "Next"
+      gist: "Create gist with question"

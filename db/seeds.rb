@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 5.times do
   Category.create(
-    title: Faker::ProgrammingLanguage.unique.name,
+    title: Faker::ProgrammingLanguage.unique.name
   )
 end
 
@@ -21,7 +23,7 @@ tests_ids = Test.pluck(:id)
 50.times do
   question = Question.new(
     body: Faker::Lorem.unique.question,
-    test_id: tests_ids.sample,
+    test_id: tests_ids.sample
   )
 
   4.times do
