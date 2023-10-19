@@ -13,8 +13,9 @@ class TestPassagesController < ApplicationController
     gist = Gist.new(
       user: current_user,
       question: @test_passage.current_question,
-      hash: result.id
+      url_hash: result&.id
     )
+    debugger
 
     if result.present? && gist.save
       redirect_to @test_passage, notice: t('.success_html', link: result.html_url)

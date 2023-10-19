@@ -31,3 +31,6 @@ en:
         success: "Answer was successfully created."
     application:
       not_authorized: "You are not authtorized to view this page."
+    gists:
+      index:
+        header: "Gists"

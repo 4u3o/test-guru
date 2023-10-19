@@ -31,3 +31,6 @@ ru:
         success: "Ответ был успешно создан."
     application:
       not_authorized: "Вы не можете просматривать эту страницу."
+    gists:
+      index:
+        header: "Gists"

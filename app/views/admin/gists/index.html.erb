@@ -1,0 +1,14 @@
+<h1><%= t('.header') %></h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col"><%= Question.model_name.human %></th>
+      <th scope="col"><%= Gist.human_attribute_name(:hash) %></th>
+      <th scope="col"><%= User.human_attribute_name(:email) %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render @gists %>
+  </tbody>
+</table>

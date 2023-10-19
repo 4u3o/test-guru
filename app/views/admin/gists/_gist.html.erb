@@ -1,0 +1,6 @@
+<tr>
+  <th scope="row"><%= gist.id %></th>
+  <th><%= truncate(gist.question.body, length: Gist::QUESTION_LENGTH) %></th>
+  <th><%= link_to gist.url_hash, gist_url(gist.url_hash), target: "_blank", rel: "noopener noreferrer" %></th>
+  <th><%= gist.user.email %></th>
+</tr>
