@@ -5,3 +5,6 @@ en:
     show:
       header: "Passing the %{title} Test"
       next: "Next"
+    gist:
+      failure: "An error occured while saving gist"
+      success_html: '<a href="%{link}" target="_blank" rel="noopener noreferrer">Gist was succesfully created!</a>'

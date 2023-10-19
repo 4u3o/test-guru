@@ -1,11 +1,21 @@
 class TestPassagesController < ApplicationController
-  before_action :set_test_passage, only: %i[show update result]
+  before_action :set_test_passage, only: %i[show update result gist]
 
   def show
     render :result if @test_passage.completed?
   end
 
   def result
+  end
+
+  def gist
+    result = GistQuestionService.new(@test_passage.current_question).call
+
+    if result.present?
+      redirect_to @test_passage, notice: t('.success_html', link: result.html_url)
+    else
+      redirect_to @test_passage, alert: t('.failure')
+    end
   end
 
   def update

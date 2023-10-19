@@ -16,4 +16,5 @@ en:
   advanced: "advanced"
   hard: "hard"
   footer: "platform with tests"
+  description: "A question about %{test_title} from TestGuru"
 
