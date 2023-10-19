@@ -2,10 +2,8 @@
 
 one:
   body: MyText
-  correct: false
   test: one
 
 two:
   body: MyText
-  correct: false
   test: two

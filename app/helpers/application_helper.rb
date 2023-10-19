@@ -3,7 +3,7 @@ module ApplicationHelper
     Time.now.year
   end
 
-  def github_url(author, repo)
+  def github_link(author, repo)
     link_to repo.split('-').each(&:capitalize!).join,
             "https://github.com/#{author}/#{repo}",
             target: "_blank",

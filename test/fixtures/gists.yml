@@ -2,10 +2,10 @@
 
 one:
   question: one
-  hash: MyString
+  url_hash: MyString
   user: one
 
 two:
   question: two
-  hash: AnotherString
+  url_hash: AnotherString
   user: two

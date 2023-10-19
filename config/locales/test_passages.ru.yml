@@ -5,6 +5,4 @@ ru:
     show:
       header: "Прохождение %{title} теста"
       next: "Следующий"
-    gist:
-      failure: "Во время сохранения gist произошла ошибка"
-      success_html: '<a href="%{link}" target="_blank" rel="noopener noreferrer">Gist успешно сохранен</a>'
+      gist: "Создать Gist c вопросом"

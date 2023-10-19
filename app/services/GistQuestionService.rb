@@ -6,12 +6,19 @@ class GistQuestionService
   end
 
   def call
-    client.create_gist(gist_params)
+    # боюсь что кто-то может вклиниться с вызовом между call и success?
+    result = client.create_gist(gist_params)
+    success? ? result : nil
+  end
+
+  def success?
+    client.last_response.status == CREATED
   end
 
   private
 
   FILE_NAME = 'test-guru-question.txt'
+  CREATED = 201
 
   attr_reader :test, :client, :question
 
