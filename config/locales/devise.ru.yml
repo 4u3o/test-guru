@@ -6,3 +6,6 @@ ru:
     registrations:
       new:
         header: "Стань Гуру"
+    shared:
+      links:
+        confirmate: "Не получили письмо с подтверждением?"
