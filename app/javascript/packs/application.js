@@ -13,4 +13,5 @@ Turbolinks.start()
 ActiveStorage.start()
 
 import "bootstrap"
+import "../utilities/sorting"
 import "../stylesheets/application"
