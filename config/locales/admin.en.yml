@@ -10,6 +10,8 @@ en:
         new_test: "New test"
       create:
         success: "Test was successfully created."
+      form_inline:
+        submit: "OK"
     questions:
       show:
         new-answer: "New Answer"
