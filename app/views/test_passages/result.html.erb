@@ -1,3 +1,6 @@
+<div class="my-3">
+  <%= render 'progress_bar', current: @test_passage.test.questions_count, total: @test_passage.test.questions_count %>
+</div>
 <div class="card my-3">
   <div class="card-body">
     <h1><%= t('.header', title: @test_passage.test.title) %></h1>

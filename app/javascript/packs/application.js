@@ -15,5 +15,6 @@ ActiveStorage.start()
 import "bootstrap"
 import "../utilities/sorting"
 import "../utilities/form_inline"
+import "../utilities/progress_bar"
 import "../devise/registrations"
 import "../stylesheets/application"

@@ -21,17 +21,22 @@ function formInlineLinkHandler(event) {
 }
 
 function formInlineHandler(testId) {
-  const link = document.querySelector(`.form-inline-link[data-test-id="${testId}"]`);
-  const testTitle = document.querySelector(`.test-title[data-test-id="${testId}"]`);
   const formInline = document.querySelector(`.form-inline[data-test-id="${testId}"]`);
 
+  if (!formInline) {
+    return;
+  }
+
+  const link = document.querySelector(`.form-inline-link[data-test-id="${testId}"]`);
+  const testTitle = document.querySelector(`.test-title[data-test-id="${testId}"]`);
+
   if (formInline.classList.contains('d-none')) {
-    testTitle.classList.add('d-none');
-    formInline.classList.remove('d-none');
+    testTitle.classList.toggle('d-none');
+    formInline.classList.toggle('d-none');
     link.textContent = 'Закончить';
   } else {
-    testTitle.classList.remove('d-none');
-    formInline.classList.add('d-none');
+    testTitle.classList.toggle('d-none');
+    formInline.classList.toggle('d-none');
     link.textContent = 'Изменить';
   }
 }
