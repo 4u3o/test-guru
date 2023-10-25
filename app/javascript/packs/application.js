@@ -13,4 +13,6 @@ Turbolinks.start()
 ActiveStorage.start()
 
 import "bootstrap"
+import "../utilities/sorting"
+import "../devise/registrations"
 import "../stylesheets/application"

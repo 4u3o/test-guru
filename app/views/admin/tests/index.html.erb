@@ -2,9 +2,9 @@
 <p>
   <%= link_to t('.new_test'), new_admin_test_path, class: 'btn btn-primary' %>
 </p>
-<table>
+<table class="table table-striped">
   <tr>
-    <th><%= Test.human_attribute_name(:title) %></th>
+    <%= render 'partials/sort_th' %>
     <th><%= Test.human_attribute_name(:level) %></th>
     <th><%= Question.model_name.human(count: 2) %></th>
     <th colspan="3"><%= t('actions') %></th>
