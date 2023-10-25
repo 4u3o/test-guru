@@ -10,6 +10,8 @@ ru:
         new_test: "Новый тест"
       create:
         success: "Тест был успешно создан."
+      form_inline:
+        submit: "ОК"
     questions:
       show:
         new-answer: "Новый Ответ"

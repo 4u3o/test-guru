@@ -2,6 +2,7 @@
 <p>
   <%= link_to t('.new_test'), new_admin_test_path, class: 'btn btn-primary' %>
 </p>
+<%= render 'partials/errors', resource: @test %>
 <table class="table table-striped">
   <tr>
     <%= render 'partials/sort_th' %>

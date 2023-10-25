@@ -1,9 +1,16 @@
 <tr>
-  <td><%= test.title %></td>
+  <td>
+    <%= content_tag :span, test.title, class: 'test-title', data: {test_id: test.id} %>
+    <%= render 'admin/tests/form_inline', test: updated_test(test, @test) %>
+  </td>
   <td><%= test_level(test) %></td>
   <td><%= test.questions_count %></td>
   <td><%= link_to t('show'), admin_test_path(test) %></td>
-  <td><%= link_to t('edit'), edit_admin_test_path(test) %></td>
+  <td>
+    <%= link_to t('edit'), edit_admin_test_path(test),
+                class: 'form-inline-link',
+                data: {test_id: test.id} %>
+  </td>
   <td>
     <%= link_to t('delete'), admin_test_path(test), method: :delete, data: { confirm: t('confirmation')} %>
   </td>

@@ -11,4 +11,8 @@ module TestsHelper
   def test_level(test)
     TEST_LEVELS[test.level] || I18n.t('.hero')
   end
+
+  def updated_test(current, updated)
+    current == updated ? updated : current
+  end
 end
