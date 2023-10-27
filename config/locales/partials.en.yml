@@ -2,6 +2,7 @@ en:
   partials:
     footer:
       project: "Study project for Thinknetica"
+      feedback: "Feedback"
     errors:
       header:
         one: "%{count} error detected"

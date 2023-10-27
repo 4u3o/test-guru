@@ -1,0 +1,4 @@
+en:
+  feedbacks_mailer:
+    feedback:
+      subject: "New message from %{from}"

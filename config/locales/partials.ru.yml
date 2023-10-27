@@ -2,6 +2,7 @@ ru:
   partials:
     footer:
       project: "Учебный проект в онлайн-школе Thinknetica"
+      feedback: "Обратная связь"
     errors:
       header:
         one: "%{count} ошибка обнаружена"

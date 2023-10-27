@@ -17,4 +17,13 @@ en:
   hard: "hard"
   footer: "platform with tests"
   description: "A question about %{test_title} from TestGuru"
+  feedbacks:
+    new:
+      header: "Leave a message"
+    form:
+      content: "Message"
+      subject: "Subject"
+    create:
+      create: "Message successfuly sended"
+  send: "Send"
 

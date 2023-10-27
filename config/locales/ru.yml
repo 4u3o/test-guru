@@ -22,3 +22,12 @@ ru:
   hard: "сложный"
   footer: "платформа для тестов"
   description: "Вопрос о %{test_title} из ГуруТестов"
+  feedbacks:
+    new:
+      header: "Оставьте свое сообщение"
+    form:
+      content: "Сообщение"
+      subject: "Тема"
+    create:
+      create: "Сообщение успешно отправлено"
+  send: "Отправить"

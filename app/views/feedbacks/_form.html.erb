@@ -1,0 +1,22 @@
+<%= form_with model: @feedback do |f| %>
+  <div class="form-group">
+    <p>
+      <%= f.label :subject, t('.subject') %>
+      <%= f.text_field :subject, autofocus: true, class: 'form-control' %>
+    </p>
+    <p>
+      <%= f.label :content, t('.content') %>
+      <%= f.text_area :content,  class: 'form-control', required: true %>
+    </p>
+    <p>
+      <%= f.label :from, 'Email' %>
+      <%= f.email_field :from,
+                        autocomplete: "email",
+                        class: 'form-control',
+                        placeholder: 'email',
+                        required: true %>
+    </p>
+
+    <%= f.submit t(:send), class: 'btn btn-primary' %>
+  </div>
+<% end %>
