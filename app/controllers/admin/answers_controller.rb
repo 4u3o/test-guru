@@ -16,7 +16,7 @@ class Admin::AnswersController < Admin::ApplicationController
     @answer = @question.answers.new(answer_params)
 
     if @answer.save
-      redirect_to [:admin, @answer], notice: t('.success')
+      redirect_to [:admin, @question], notice: t('.success')
     else
       render :new
     end
@@ -24,7 +24,7 @@ class Admin::AnswersController < Admin::ApplicationController
 
   def update
     if @answer.update(answer_params)
-      redirect_to [:admin, @answer]
+      redirect_to [:admin, @answer.question]
     else
       render :edit
     end
