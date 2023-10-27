@@ -6,6 +6,9 @@ en:
       confirmed: "Your email address has been successfully confirmed."
       send_instructions: "You will receive an email with instructions for how to confirm your email address in a few minutes."
       send_paranoid_instructions: "If your email address exists in our database, you will receive an email with instructions for how to confirm your email address in a few minutes."
+      new:
+        header: "Resend confirmation instructions"
+        submit: "Resend confirmation instructions"
     failure:
       already_authenticated: "You are already signed in."
       inactive: "Your account is not activated yet."
@@ -60,6 +63,7 @@ en:
     shared:
       links:
         confirmate: "Didn't receive confirmation instructions?"
+        forgot: "Forgot your password?"
   errors:
     messages:
       already_confirmed: "was already confirmed, please try signing in"

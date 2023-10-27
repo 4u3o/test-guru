@@ -12,6 +12,7 @@ ru:
         success: "Тест был успешно создан."
       form_inline:
         submit: "ОК"
+      not_authorized: "Вы не являетесь администратором"
     questions:
       show:
         new-answer: "Новый Ответ"

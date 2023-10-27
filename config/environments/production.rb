@@ -65,7 +65,6 @@ Rails.application.configure do
   # config.active_job.queue_name_prefix = "test_guru_production"
 
   config.action_mailer.perform_caching = false
-
   config.action_mailer.default_url_options = {
     host: 'test-guru-eoi6.onrender.com'
   }
@@ -73,10 +72,9 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {
     address: 'smtp.gmail.com',
     port: 587,
-    domain: 'gmail.com',
     user_name: ENV['SMTP_USERNAME'],
     password: ENV['SMTP_PASSWORD'],
-    authentication: :plain,
+    authentication: 'plain',
     enable_starttls: true,
     open_timeout: 5,
     read_timeout: 5
