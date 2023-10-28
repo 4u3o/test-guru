@@ -3,10 +3,7 @@
 class FeedbacksController < ApplicationController
   skip_before_action :authenticate_user!
 
-  def new
-    @feedback = Feedback.new
-    @feedback.from = current_user.email if user_signed_in?
-  end
+  def new; end
 
   def create
     @feedback = Feedback.new(feedback_params)
