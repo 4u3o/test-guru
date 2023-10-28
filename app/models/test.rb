@@ -3,9 +3,9 @@
 class Test < ApplicationRecord
   belongs_to :category
   belongs_to :author, class_name: 'User'
-  has_many :questions
-  has_many :test_passages
-  has_many :users, through: :test_passages, inverse_of: 'tests'
+  has_many :questions, dependent: :destroy
+  has_many :test_passages, dependent: :destroy
+  has_many :users, through: :test_passages, inverse_of: 'tests', dependent: :destroy
 
   validates :title, uniqueness: { scope: :level }, presence: true
   validates :level, numericality: {
