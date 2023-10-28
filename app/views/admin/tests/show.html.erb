@@ -11,6 +11,11 @@
       <strong><%= Test.human_attribute_name(:category_id) %>:</strong>
       <%= @test.category.title %>
     </li>
+    <% if @test.published %>
+      <li class="list-group-item">
+        <strong><%= Test.human_attribute_name(:published) %></strong>
+      </li>
+    <% end %>
     <li class="list-group-item">
       <table>
         <tr>

@@ -59,7 +59,7 @@ class Admin::TestsController < Admin::ApplicationController
   end
 
   def test_params
-    params.required(:test).permit(:title, :level, :category_id)
+    params.required(:test).permit(:title, :level, :category_id, :published)
   end
 
   def rescue_with_test_not_found

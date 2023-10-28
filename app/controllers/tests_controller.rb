@@ -5,7 +5,7 @@ class TestsController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_test_not_found
 
   def index
-    @tests = Test.includes(:questions)
+    @tests = Test.includes(:questions).published
   end
 
   def start

@@ -33,6 +33,7 @@ ru:
         author: "Автор"
         questions: "Вопросы"
         category_id: "Категория"
+        published: "Опубликован"
       answer:
         body: "Содержание"
         correct: "Верный"

@@ -5,6 +5,7 @@
   </td>
   <td><%= test_level(test) %></td>
   <td><%= test.questions_count %></td>
+  <td><%= t(test.published.class) %></td>
   <td><%= link_to t('show'), admin_test_path(test) %></td>
   <td>
     <%= link_to t('edit'), edit_admin_test_path(test),

@@ -17,6 +17,8 @@ en:
   hard: "hard"
   footer: "platform with tests"
   description: "A question about %{test_title} from TestGuru"
+  TrueClass: "yes"
+  FalseClass: "no"
   feedbacks:
     new:
       header: "Leave a message"
@@ -26,4 +28,3 @@ en:
     create:
       create: "Message successfuly sended"
   send: "Send"
-

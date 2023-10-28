@@ -30,4 +30,6 @@ ru:
       subject: "Тема"
     create:
       create: "Сообщение успешно отправлено"
+  TrueClass: "да"
+  FalseClass: "нет"
   send: "Отправить"

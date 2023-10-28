@@ -19,6 +19,7 @@ class Test < ApplicationRecord
   scope :by_category, lambda { |title|
     joins(:category).where(category: { title: })
   }
+  scope :published, -> { where(published: true) }
 
   def self.titles_by_category(category)
     by_category(category).order(title: :desc).pluck(:title)
