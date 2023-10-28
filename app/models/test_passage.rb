@@ -26,6 +26,8 @@ class TestPassage < ApplicationRecord
   end
 
   def result
+    return 0 if test.questions_count.zero?
+
     correct_questions.to_f / test.questions_count
   end
 
