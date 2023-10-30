@@ -3,8 +3,8 @@
 class Test < ApplicationRecord
   belongs_to :category
   belongs_to :author, class_name: 'User'
-  has_many :questions
-  has_many :test_passages
+  has_many :questions, dependent: :destroy
+  has_many :test_passages, dependent: :destroy
   has_many :users, through: :test_passages, inverse_of: 'tests'
 
   validates :title, uniqueness: { scope: :level }, presence: true
@@ -19,6 +19,7 @@ class Test < ApplicationRecord
   scope :by_category, lambda { |title|
     joins(:category).where(category: { title: })
   }
+  scope :published, -> { where(published: true) }
 
   def self.titles_by_category(category)
     by_category(category).order(title: :desc).pluck(:title)

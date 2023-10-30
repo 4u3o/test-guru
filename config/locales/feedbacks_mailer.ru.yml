@@ -1,0 +1,4 @@
+ru:
+  feedbacks_mailer:
+    feedback:
+      subject: "Новое сообщение от %{from}"

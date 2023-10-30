@@ -9,3 +9,8 @@ ru:
     shared:
       links:
         confirmate: "Не получили письмо с подтверждением?"
+        forgot: "Забыли пароль?"
+    confirmations:
+      new:
+        header: "Отправить новое письмо для подтверждения Email"
+        submit: "Отправить"
