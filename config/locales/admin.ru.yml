@@ -37,3 +37,19 @@ ru:
     gists:
       index:
         header: "Gists"
+    badges:
+      edit:
+        header: "Изменить бейдж"
+      index:
+        header: "Бейджи"
+        new: "Создать новый"
+      new:
+        header: "Новый бейдж"
+      create:
+        success: "Бейдж успешно создан"
+      update:
+        success: "Бейдж был обновлен"
+        failure: "Бейдж не был обновлен"
+      destroy:
+        success: "Бейдж был удален"
+        failure: "Бейдж не был удален"

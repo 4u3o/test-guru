@@ -1,0 +1,22 @@
+<%= form_with model: [:admin, @badge] do |f| %>
+  <%= render 'partials/errors', resource: @badge %>
+  <div class="form-group">
+    <p>
+      <%= f.label :title %>
+      <%= f.text_field :title, class: 'form-control' %>
+    </p>
+    <p>
+      <%= f.label :img %>
+      <%= f.text_field :img, class: 'form-control' %>
+    </p>
+    <p>
+      <%= f.label :rule %>
+      <%= f.select :rule, options_for_select(Badge.rules, @badge.rule), {}, class: 'form-select' %>
+    </p>
+    <p>
+      <%= f.label :rule_value %>
+      <%= f.text_field :rule_value, class: 'form-control' %>
+    </p>
+    <%= f.submit class: 'btn btn-primary' %>
+  </div>
+<% end %>

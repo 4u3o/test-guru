@@ -1,0 +1,6 @@
+en:
+  badges:
+    index:
+      header: "All badges"
+      earned: "Earned:"
+      other: "Others:"

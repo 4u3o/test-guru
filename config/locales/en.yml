@@ -28,3 +28,4 @@ en:
     create:
       create: "Message successfuly sended"
   send: "Send"
+  earned: "You earn a new badge"

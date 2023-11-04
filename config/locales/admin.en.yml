@@ -32,7 +32,23 @@ en:
       create:
         success: "Answer was successfully created."
     application:
-      not_authorized: "You are not authtorized to view this page."
+      not_authorized: "You are not authorized to view this page."
     gists:
       index:
         header: "Gists"
+    badges:
+      edit:
+        header: "Edit badge"
+      index:
+        header: "Badges"
+        new: "Create new"
+      new:
+        header: "New badge"
+      create:
+        success: "Badge was successfully created"
+      update:
+        success: "Badge was successfully updated"
+        failure: "Badge was not updated"
+      destroy:
+        success: "Badge was deleted"
+        failure: "Badge was not deleted"

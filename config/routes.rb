@@ -14,13 +14,14 @@ Rails.application.routes.draw do
                sign_out: :logout
              }
 
+  resources :badges, only: :index
+  resources :feedbacks, only: %i[new create]
+
   resources :tests, only: :index do
     member do
       post :start
     end
   end
-
-  resources :feedbacks, only: %i[new create]
 
   resources :test_passages, only: %i[show update] do
     member do
@@ -39,5 +40,6 @@ Rails.application.routes.draw do
     end
 
     resources :gists, only: :index
+    resources :badges, except: :show
   end
 end

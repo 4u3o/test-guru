@@ -22,6 +22,9 @@ ru:
       gist:
         one: "Gist"
         other: "Gists"
+      badge:
+        one: "Бейдж"
+        other: "Бейджи"
     attributes:
       user:
         email: "Email"
@@ -46,6 +49,11 @@ ru:
         question_id: "Вопрос"
         url_hash: "Hash"
         user_id: "Пользователь"
+      badge:
+        title: "Название"
+        img: "Изображение"
+        rule: "Правило"
+        rule_value: "Целевое значение правила"
     errors:
       models:
         answer:
