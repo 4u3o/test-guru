@@ -29,4 +29,8 @@ class User < ApplicationRecord
   def admin?
     is_a? Admin
   end
+
+  def success_test_ids
+    test_passages.success.pluck(:test_id)
+  end
 end

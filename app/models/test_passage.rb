@@ -9,6 +9,8 @@ class TestPassage < ApplicationRecord
 
   before_validation :set_current_question
 
+  scope :success, -> { where(success: true) }
+
   def accept!(answer_ids)
     if correct_answer?(answer_ids)
       self.correct_questions += 1
@@ -21,7 +23,7 @@ class TestPassage < ApplicationRecord
     current_question.nil?
   end
 
-  def success?
+  def result_success?
     result >= SUCCESS_RATE
   end
 
@@ -33,6 +35,10 @@ class TestPassage < ApplicationRecord
 
   def current_question_number
     questions.ids.index(current_question_id).next
+  end
+
+  def attempt_count
+    TestPassage.where(user:, test:).count
   end
 
   private

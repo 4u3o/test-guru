@@ -14,8 +14,16 @@ class TestPassagesController < ApplicationController
 
     if @test_passage.completed?
       TestsMailer.completed_test(@test_passage).deliver_now
-      # TODO: выдаем бейдж
-      BadgesService.new(@test_passage, flash).call
+
+      if @test_passage.result_success?
+        @test_passage.update(success: true)
+
+        bs = BadgesService.new(@test_passage)
+        bs.call
+
+        flash[:notice] = t(:earned) if bs.badges.any?
+      end
+
       redirect_to result_test_passage_path(@test_passage)
     else
       render :show
