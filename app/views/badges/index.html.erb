@@ -1,0 +1,11 @@
+<h1><%= t('.header') %></h1>
+<div class="container">
+  <h2><%= t('.earned') %></h2>
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
+    <%= render partial: 'badge', collection:  @user_badges %>
+  </div>
+  <h2><%= t('.other') %></h2>
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
+    <%= render partial: 'badge', collection:  @other_badges %>
+  </div>
+</div>

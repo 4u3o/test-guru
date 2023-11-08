@@ -1,0 +1,12 @@
+<div class="col">
+  <%= link_to edit_admin_badge_path(badge) do  %>
+    <div class="row">
+      <div class="col">
+        <%= image_tag badge.img %>
+      </div>
+      <div class="col">
+        <h5><%= badge.title %></h5>
+      </div>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,6 @@
+ru:
+  badges:
+    index:
+      header: "Все бейджи"
+      earned: "Заработанные:"
+      other: "Остальные:"

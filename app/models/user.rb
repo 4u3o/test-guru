@@ -13,6 +13,8 @@ class User < ApplicationRecord
   has_many :test_passages
   has_many :tests, through: :test_passages, inverse_of: 'users'
   has_many :gists, inverse_of: 'user'
+  has_many :badges_users
+  has_many :badges, through: :badges_users
 
   validates :email, uniqueness: true, format: { with: URI::MailTo::EMAIL_REGEXP }
 
@@ -26,5 +28,9 @@ class User < ApplicationRecord
 
   def admin?
     is_a? Admin
+  end
+
+  def success_test_ids
+    test_passages.success.pluck(:test_id)
   end
 end
