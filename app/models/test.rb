@@ -28,4 +28,15 @@ class Test < ApplicationRecord
   def questions_count
     questions.size
   end
+
+  def timer_duration
+    @timer_duration ||= ActiveSupport::Duration.parse(iso8601) if timer.present?
+  end
+
+  private
+
+  def iso8601
+    hours, minutes = timer.split(':')
+    "PT#{hours}H#{minutes}M"
+  end
 end

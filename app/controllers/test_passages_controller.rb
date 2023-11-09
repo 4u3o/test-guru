@@ -33,6 +33,11 @@ class TestPassagesController < ApplicationController
   private
 
   def set_test_passage
-    @test_passage = TestPassage.find(params[:id])
+    # я вот не знаю, что лучше: много мелких запросов или один жирный?
+    @test_passage =
+      TestPassage.eager_load(:user,
+                             current_question: :answers,
+                             test: { questions: :answers })
+                 .find(params[:id])
   end
 end

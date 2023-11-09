@@ -20,7 +20,7 @@ class TestPassage < ApplicationRecord
   end
 
   def completed?
-    current_question.nil?
+    current_question.nil? || timer_end?
   end
 
   def result_success?
@@ -39,6 +39,16 @@ class TestPassage < ApplicationRecord
 
   def attempt_count
     TestPassage.where(user:, test:).count
+  end
+
+  def end_time
+    created_at + test.timer_duration if test.timer.present?
+  end
+
+  def seconds_left
+    return if end_time.nil?
+
+    (end_time - Time.zone.now).floor
   end
 
   private
@@ -64,5 +74,9 @@ class TestPassage < ApplicationRecord
 
   def correct_answers
     current_question.answers.correct
+  end
+
+  def timer_end?
+    end_time.present? && Time.zone.now >= end_time
   end
 end
