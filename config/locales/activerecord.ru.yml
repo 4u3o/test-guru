@@ -37,6 +37,7 @@ ru:
         questions: "Вопросы"
         category_id: "Категория"
         published: "Опубликован"
+        timer: "Таймер"
       answer:
         body: "Содержание"
         correct: "Верный"
